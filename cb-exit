@@ -35,15 +35,15 @@ class cb_exit:
 	def suspend_action(self,btn):
 		self.disable_buttons()
 		os.system("cb-lock")
-		os.system("i3lock -n -p default --color=000000")
 		os.system("dbus-send --system --print-reply --dest=\"org.freedesktop.UPower\" /org/freedesktop/UPower org.freedesktop.UPower.Suspend")
+		os.system("i3lock -n -p default --color=000000")
 		gtk.main_quit()
 	
 	def hibernate_action(self,btn):
 		self.disable_buttons()
 		os.system("cb-lock")
-		os.system("i3lock -n -p default --color=000000")
 		os.system("dbus-send --system --print-reply --dest=\"org.freedesktop.UPower\" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate")
+		os.system("i3lock -n -p default --color=000000")
 		gtk.main_quit()
 
 	def reboot_action(self,btn):
